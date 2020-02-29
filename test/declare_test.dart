@@ -6,7 +6,7 @@ void main() {
     test('get alias can return word', () {
       final String verbose = LogoLogLevel.VERBOSE;
 
-      expect(verbose, verbose);
+      expect(verbose, equals(verbose));
     });
   });
 }
