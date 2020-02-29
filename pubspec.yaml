@@ -1,6 +1,6 @@
 name: logo
 description: Log for Dart. Simple log package for debug and issue tracking. No extra dependency.
-version: 0.0.0
+version: 1.0.0
 homepage: https://sudo.dog
 repository: https://github.com/SudoDotDog/Dart-Logo
 
