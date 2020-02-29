@@ -4,9 +4,13 @@ class Logo {
   LogoLogLevel _level;
   bool _showTime;
 
+  void Function(String) _logFunction;
+
   Logo(LogoLogLevel level) {
     this._level = level;
     this._showTime = false;
+
+    this._logFunction = print;
   }
 
   Logo showTime() {
@@ -16,6 +20,11 @@ class Logo {
 
   Logo hideTime() {
     this._showTime = false;
+    return this;
+  }
+
+  Logo declareLogFunction(void Function(String) logFunction) {
+    this._logFunction = logFunction;
     return this;
   }
 
@@ -43,7 +52,7 @@ class Logo {
     final String quote = getLogQuote(LogoLogLevelType.CRITICAL);
     final String prettified = mergeContent(quote, content, this._getConfig());
 
-    print(prettified);
+    this._logFunction(prettified);
     return this;
   }
 
@@ -61,7 +70,7 @@ class Logo {
     final String quote = getLogQuote(LogoLogLevelType.ERROR);
     final String prettified = mergeContent(quote, content, this._getConfig());
 
-    print(prettified);
+    this._logFunction(prettified);
     return this;
   }
 
@@ -78,7 +87,7 @@ class Logo {
     final String quote = getLogQuote(LogoLogLevelType.WARNING);
     final String prettified = mergeContent(quote, content, this._getConfig());
 
-    print(prettified);
+    this._logFunction(prettified);
     return this;
   }
 
@@ -94,7 +103,7 @@ class Logo {
     final String quote = getLogQuote(LogoLogLevelType.INFO);
     final String prettified = mergeContent(quote, content, this._getConfig());
 
-    print(prettified);
+    this._logFunction(prettified);
     return this;
   }
 
@@ -109,7 +118,7 @@ class Logo {
     final String quote = getLogQuote(LogoLogLevelType.DEBUG);
     final String prettified = mergeContent(quote, content, this._getConfig());
 
-    print(prettified);
+    this._logFunction(prettified);
     return this;
   }
 
@@ -123,7 +132,7 @@ class Logo {
     final String quote = getLogQuote(LogoLogLevelType.VERBOSE);
     final String prettified = mergeContent(quote, content, this._getConfig());
 
-    print(prettified);
+    this._logFunction(prettified);
     return this;
   }
 
