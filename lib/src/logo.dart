@@ -6,11 +6,19 @@ class Logo {
 
   void Function(String) _logFunction;
 
+  int _count;
+
   Logo(LogoLogLevel level) {
     this._level = level;
     this._showTime = false;
 
     this._logFunction = print;
+
+    this._count = 0;
+  }
+
+  int getCount() {
+    return this._count;
   }
 
   Logo showTime() {
@@ -53,6 +61,7 @@ class Logo {
     final String prettified = mergeContent(quote, content, this._getConfig());
 
     this._logFunction(prettified);
+    this._count++;
     return this;
   }
 
@@ -71,6 +80,7 @@ class Logo {
     final String prettified = mergeContent(quote, content, this._getConfig());
 
     this._logFunction(prettified);
+    this._count++;
     return this;
   }
 
@@ -88,6 +98,7 @@ class Logo {
     final String prettified = mergeContent(quote, content, this._getConfig());
 
     this._logFunction(prettified);
+    this._count++;
     return this;
   }
 
@@ -104,6 +115,7 @@ class Logo {
     final String prettified = mergeContent(quote, content, this._getConfig());
 
     this._logFunction(prettified);
+    this._count++;
     return this;
   }
 
@@ -119,6 +131,7 @@ class Logo {
     final String prettified = mergeContent(quote, content, this._getConfig());
 
     this._logFunction(prettified);
+    this._count++;
     return this;
   }
 
@@ -133,6 +146,12 @@ class Logo {
     final String prettified = mergeContent(quote, content, this._getConfig());
 
     this._logFunction(prettified);
+    this._count++;
+    return this;
+  }
+
+  Logo reset() {
+    this._count = 0;
     return this;
   }
 
