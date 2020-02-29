@@ -47,6 +47,86 @@ class Logo {
     return this;
   }
 
+  Logo error(String content) {
+    if (!this._expect([
+      LogoLogLevelType.ERROR,
+      LogoLogLevelType.WARNING,
+      LogoLogLevelType.INFO,
+      LogoLogLevelType.DEBUG,
+      LogoLogLevelType.VERBOSE,
+    ])) {
+      return this;
+    }
+
+    final String quote = getLogQuote(LogoLogLevelType.ERROR);
+    final String prettified = mergeContent(quote, content, this._getConfig());
+
+    print(prettified);
+    return this;
+  }
+
+  Logo warning(String content) {
+    if (!this._expect([
+      LogoLogLevelType.WARNING,
+      LogoLogLevelType.INFO,
+      LogoLogLevelType.DEBUG,
+      LogoLogLevelType.VERBOSE,
+    ])) {
+      return this;
+    }
+
+    final String quote = getLogQuote(LogoLogLevelType.WARNING);
+    final String prettified = mergeContent(quote, content, this._getConfig());
+
+    print(prettified);
+    return this;
+  }
+
+  Logo info(String content) {
+    if (!this._expect([
+      LogoLogLevelType.INFO,
+      LogoLogLevelType.DEBUG,
+      LogoLogLevelType.VERBOSE,
+    ])) {
+      return this;
+    }
+
+    final String quote = getLogQuote(LogoLogLevelType.INFO);
+    final String prettified = mergeContent(quote, content, this._getConfig());
+
+    print(prettified);
+    return this;
+  }
+
+  Logo debug(String content) {
+    if (!this._expect([
+      LogoLogLevelType.DEBUG,
+      LogoLogLevelType.VERBOSE,
+    ])) {
+      return this;
+    }
+
+    final String quote = getLogQuote(LogoLogLevelType.DEBUG);
+    final String prettified = mergeContent(quote, content, this._getConfig());
+
+    print(prettified);
+    return this;
+  }
+
+  Logo verbose(String content) {
+    if (!this._expect([
+      LogoLogLevelType.VERBOSE,
+    ])) {
+      return this;
+    }
+
+    final String quote = getLogQuote(LogoLogLevelType.VERBOSE);
+    final String prettified = mergeContent(quote, content, this._getConfig());
+
+    print(prettified);
+    return this;
+  }
+
   bool _expect(List<String> modes) {
     return this._level == LogoLogLevelType.ALL ||
         modes.indexOf(this._level.level) != -1;
