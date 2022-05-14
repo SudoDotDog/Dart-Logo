@@ -1,7 +1,7 @@
 import 'package:logo/logo.dart';
 
 class PrettifyConfig {
-  final bool showTime;
+  late final bool showTime;
 
   PrettifyConfig({
     this.showTime = false,

@@ -1,12 +1,12 @@
 import 'package:logo/logo.dart';
 
 class Logo {
-  LogoLogLevel _level;
-  bool _showTime;
+  late LogoLogLevel _level;
+  late bool _showTime;
 
-  void Function(String) _logFunction;
+  late void Function(String) _logFunction;
 
-  int _count;
+  late int _count;
 
   Logo(LogoLogLevel level) {
     this._level = level;
@@ -17,7 +17,7 @@ class Logo {
     this._count = 0;
   }
 
-  int getCount() {
+  int? getCount() {
     return this._count;
   }
 
@@ -36,7 +36,7 @@ class Logo {
     return this;
   }
 
-  LogoLogLevel getLevel() {
+  LogoLogLevel? getLevel() {
     return this._level;
   }
 
