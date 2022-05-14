@@ -8,15 +8,17 @@ class PrettifyConfig {
   });
 }
 
-String mergeContent(String quote, String content, PrettifyConfig config) {
+String mergeContent(String quote, Object? content, PrettifyConfig config) {
+  String stringContent = content == null ? 'null' : content.toString();
+
   if (config.showTime) {
     final DateTime dateTime = DateTime.now();
     final String prettifiedDate = appropriateDateStringWithTime(dateTime);
 
-    return "$quote $prettifiedDate $content";
+    return "$quote $prettifiedDate $stringContent";
   }
 
-  return "$quote $content";
+  return "$quote $stringContent";
 }
 
 String getLogQuote(String level) {

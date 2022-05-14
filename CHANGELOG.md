@@ -12,3 +12,7 @@
 ## 1.1.0
 
 -   Support sound null safety
+
+## 1.2.0
+
+-   Support object log

@@ -45,7 +45,7 @@ class Logo {
     return this;
   }
 
-  Logo critical(String content) {
+  Logo critical(Object? content) {
     if (!this._expect([
       LogoLogLevelType.CRITICAL,
       LogoLogLevelType.ERROR,
@@ -65,7 +65,7 @@ class Logo {
     return this;
   }
 
-  Logo error(String content) {
+  Logo error(Object? content) {
     if (!this._expect([
       LogoLogLevelType.ERROR,
       LogoLogLevelType.WARNING,
@@ -84,7 +84,7 @@ class Logo {
     return this;
   }
 
-  Logo warning(String content) {
+  Logo warning(Object? content) {
     if (!this._expect([
       LogoLogLevelType.WARNING,
       LogoLogLevelType.INFO,
@@ -102,7 +102,7 @@ class Logo {
     return this;
   }
 
-  Logo info(String content) {
+  Logo info(Object? content) {
     if (!this._expect([
       LogoLogLevelType.INFO,
       LogoLogLevelType.DEBUG,
@@ -119,7 +119,7 @@ class Logo {
     return this;
   }
 
-  Logo debug(String content) {
+  Logo debug(Object? content) {
     if (!this._expect([
       LogoLogLevelType.DEBUG,
       LogoLogLevelType.VERBOSE,
@@ -135,7 +135,7 @@ class Logo {
     return this;
   }
 
-  Logo verbose(String content) {
+  Logo verbose(Object? content) {
     if (!this._expect([
       LogoLogLevelType.VERBOSE,
     ])) {
