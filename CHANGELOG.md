@@ -16,3 +16,7 @@
 ## 1.2.0
 
 -   Support object log
+
+## 1.2.1
+
+-   Fix compare issue

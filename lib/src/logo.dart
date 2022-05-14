@@ -156,7 +156,7 @@ class Logo {
   }
 
   bool _expect(List<String> modes) {
-    return this._level == LogoLogLevelType.ALL ||
+    return this._level.level == LogoLogLevelType.ALL ||
         modes.indexOf(this._level.level) != -1;
   }
 
