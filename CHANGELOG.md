@@ -8,3 +8,7 @@
 -   Add count calculate
 -   Add Log function control
 -   Add Log level
+
+## 1.1.0
+
+-   Support sound null safety
